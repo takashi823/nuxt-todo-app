@@ -1,23 +1,12 @@
 <script setup lang="ts">
-
+import { h, resolveComponent } from 'vue';
+import type { TableColumn } from '@nuxt/ui';
+import type { Todo, TodoStatus } from '../../types/todo';
 import { useTodoStore } from '~/stores/todo';
-import { h, resolveComponent } from 'vue'
-import { upperFirst } from 'scule'
-import type { TableColumn } from '@nuxt/ui'
-import type { Todo, TodoStatus } from '../types/todo';
-
-const UButton = resolveComponent('UButton')
-const USelect = resolveComponent('USelect')
 
 const todoStore = useTodoStore();
-const newTodo = ref('');
-
-const addTask = () => {
-  if (newTodo.value.trim()) {
-    todoStore.addTodo(newTodo.value);
-    newTodo.value = '';
-  }
-};
+const UButton = resolveComponent('UButton');
+const USelect = resolveComponent('USelect');
 
 const columns: TableColumn<Todo>[] = [{
   accessorKey: 'id',
@@ -72,20 +61,10 @@ const columns: TableColumn<Todo>[] = [{
 </script>
 
 <template>
-  <div class="flex-1 w-full">
-    <div class="flex flex-col items-center justify-center gap-4 px-4 py-4 w-full">
-      <h2 class="text-2xl font-semibold text-gray-800">新しいタスクを追加</h2>
-      <p class="text-lg text-gray-600">タスクを入力して「追加」ボタンをクリックしてください。</p>
-      <div class="flex flex-col items-center gap-4 p-4 w-full max-w-md">
-        <UInput v-model="newTodo" placeholder="新しいタスクを入力" class="w-full" />
-        <UButton @click="addTask" label="タスクを追加" color="primary" class="cursor-pointer" />
-      </div>
-    </div>
-    <UTable ref="table" :data="todoStore.todos" :columns="columns" sticky class="h-140 bg-gray-50"
-      :key="todoStore.todos.length">
-      <template #expanded="{ row }">
-        <pre>{{ row.original }}</pre>
-      </template>
-    </UTable>
-  </div>
+  <UTable ref="table" :data="todoStore.todos" :columns="columns" sticky class="h-140 bg-gray-50"
+    :key="todoStore.todos.length">
+    <template #expanded="{ row }">
+      <pre>{{ row.original }}</pre>
+    </template>
+  </UTable>
 </template>
