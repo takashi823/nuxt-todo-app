@@ -12,11 +12,10 @@ export const useTodoStore = defineStore<
     addTodo: (title: string) => void;
     toggleTodo: (id: number) => void;
     removeTodo: (id: number) => void;
-    updateTodoStatus: (id: number, status: TodoStatus) => void; // 新しいメソッドを追加
+    updateTodoStatus: (id: number, status: TodoStatus) => void;
   }
 >('todo', {
   state: () => ({
-    // todos を reactive でラップ
     todos: reactive([]),
   }),
   actions: {
@@ -44,4 +43,5 @@ export const useTodoStore = defineStore<
       }
     },
   },
+  persist: true,
 });
