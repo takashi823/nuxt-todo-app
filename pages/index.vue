@@ -1,6 +1,10 @@
-<template>
-  <h1>TODO　アプリケーション</h1>
-    <!-- todo input -->
+<script setup>
+import TodoList from '~/components/TodoList.vue';
+</script>
 
-    <!-- todo list -->
+<template>
+  <div>
+    <h1>ToDo管理アプリケーション</h1>
+    <TodoList />
+  </div>
 </template>

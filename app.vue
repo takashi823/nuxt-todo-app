@@ -6,8 +6,6 @@
       content="タスクを管理するためのアプリケーションです。"
     />
   </Head>
-  <header>
-  </header>
   <main>
     <NuxtPage />
   </main>

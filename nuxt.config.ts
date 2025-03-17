@@ -7,13 +7,15 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/icon',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@pinia/nuxt'
   ],
   eslint: {
     config: {
       stylistic: {
         semi: true,
         quotes: 'double',
+        indent: 'tab',
       },
     },
   },
