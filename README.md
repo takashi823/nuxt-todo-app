@@ -4,34 +4,25 @@
 
 ## Setup
 
-Make sure to install dependencies:
+1. リポジトリのクローン
+```bash
+git clone https://github.com/takashi823/nuxt-todo-app.git
+
+cd nuxt-todo-app
+```
+
+2. 依存ライブラリのインストール
 
 ```bash
-# npm
 npm install
 ```
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+3. 開発サーバーの起動
+
+[http://localhost:3000](http://localhost:3000) でアクセス可能
 
 ```bash
-# npm
 npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
 ```
