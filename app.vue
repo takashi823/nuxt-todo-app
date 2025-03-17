@@ -1,15 +1,14 @@
 <template>
+
   <Head>
-    <Title>タスク管理アプリケーション</Title>
-    <Meta
-      name="タスク管理アプリケーション"
-      content="タスクを管理するためのアプリケーションです。"
-    />
+    <Title>TODO管理アプリケーション</Title>
+    <Meta name="TODO管理アプリケーション" content="タスクを管理するためのアプリケーションです。" />
   </Head>
   <main>
-    <NuxtPage />
+    <UApp>
+      <NuxtPage />
+    </UApp>
   </main>
 </template>
 
-<style>
-</style>
+<style></style>

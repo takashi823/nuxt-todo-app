@@ -8,8 +8,10 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxt/ui'
   ],
+  css: ['~/assets/css/main.css'],
   eslint: {
     config: {
       stylistic: {
